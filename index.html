@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="description" content="Complete CS Fundamentals Roadmap 2025 - Your comprehensive guide to mastering computer science fundamentals">
+    <meta name="keywords" content="CS roadmap 2025, programming, data structures, algorithms, software engineering, computer science">
+    <meta name="author" content="CS Roadmap Team">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="Complete CS Fundamentals Roadmap 2025">
+    <meta property="og:description" content="Master computer science fundamentals with our comprehensive roadmap">
+    <meta property="og:image" content="https://your-domain.com/preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-domain.com/">
+    <meta property="twitter:title" content="Complete CS Fundamentals Roadmap 2025">
+    <meta property="twitter:description" content="Master computer science fundamentals with our comprehensive roadmap">
+    <meta property="twitter:image" content="https://your-domain.com/preview.png">
+
+    <title>CS Fundamentals Roadmap 2025 - Master Computer Science</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <p>Loading CS Roadmap...</p>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-particles" id="particles"></div>
+        <div class="header-content">
+            <h1 class="glitch" data-text="CS Fundamentals Roadmap 2025">CS Fundamentals Roadmap 2025</h1>
+            <p class="header-subtitle">Your Complete Guide to Mastering Computer Science Fundamentals</p>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <i class="fas fa-book"></i>
+                    <span>11 Core Topics</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span>12-14 Months</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span>50K+ Developers</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="scrollToSection('overview')">
+                    <i class="fas fa-rocket"></i> Start Journey
+                </button>
+                <button class="btn btn-secondary" onclick="downloadRoadmap()">
+                    <i class="fas fa-download"></i> Download PDF
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container" id="navbar">
+        <div class="nav-wrapper">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <i class="fas fa-code"></i> CS Roadmap
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="nav" id="nav">
+                <button class="nav-item active" onclick="scrollToSection('overview')">
+                    <i class="fas fa-compass"></i> Overview
+                </button>
+                <button class="nav-item" onclick="scrollToSection('beginners')">
+                    <i class="fas fa-star"></i> Start Here
+                </button>
+                <button class="nav-item" onclick="scrollToSection('timeline')">
+                    <i class="fas fa-clock"></i> Timeline
+                </button>
+                <button class="nav-item" onclick="scrollToSection('programming')">
+                    <i class="fas fa-code"></i> Topics
+                </button>
+                <button class="nav-item" onclick="scrollToSection('careers')">
+                    <i class="fas fa-briefcase"></i> Careers
+                </button>
+                <button class="nav-item nav-cta" onclick="scrollToSection('resources')">
+                    <i class="fas fa-book-open"></i> Resources
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-nav-toggle" onclick="toggleMobileNav()">
+                <span class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-menu" id="mobileMenu">
+        <div class="mobile-nav-header">
+            <h3>Navigation</h3>
+            <button class="mobile-nav-close" onclick="closeMobileNav()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-items">
+            <button class="mobile-nav-item active" onclick="scrollToSection('overview')">
+                <i class="fas fa-compass"></i> Overview
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('beginners')">
+                <i class="fas fa-star"></i> For Beginners
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('timeline')">
+                <i class="fas fa-clock"></i> Learning Timeline
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('programming')">
+                <i class="fas fa-code"></i> Programming Fundamentals
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('oop')">
+                <i class="fas fa-cubes"></i> Object-Oriented Programming
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('ood')">
+                <i class="fas fa-sitemap"></i> Object-Oriented Design
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('ds-algo')">
+                <i class="fas fa-project-diagram"></i> Data Structures & Algorithms
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('databases')">
+                <i class="fas fa-database"></i> Databases
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('patterns')">
+                <i class="fas fa-palette"></i> Design Patterns
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('software-engineering')">
+                <i class="fas fa-cogs"></i> Software Engineering
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('architecture')">
+                <i class="fas fa-microchip"></i> Computer Architecture
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('os')">
+                <i class="fas fa-server"></i> Operating Systems
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('networking')">
+                <i class="fas fa-network-wired"></i> Computer Networking
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('security')">
+                <i class="fas fa-shield-alt"></i> Security Fundamentals
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('careers')">
+                <i class="fas fa-briefcase"></i> Career Paths
+            </button>
+            <button class="mobile-nav-item" onclick="scrollToSection('resources')">
+                <i class="fas fa-book-open"></i> Resources
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Overview Section -->
+        <section class="section" id="overview">
+            <div class="overview-hero">
+                <h2 class="section-title">Your Learning Journey Starts Here</h2>
+                <p class="section-subtitle">A comprehensive roadmap to master computer science fundamentals from zero to hero</p>
+                
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>11</h3>
+                            <p>Core Topics</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>12-14</h3>
+                            <p>Months to Complete</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>∞</h3>
+                            <p>Career Opportunities</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Start</h3>
+                            <p>Your Journey Today</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Path Preview -->
+                <div class="learning-path-preview">
+                    <h3>Your Complete Learning Path</h3>
+                    <div class="path-timeline">
+                        <div class="path-item">
+                            <div class="path-marker">1</div>
+                            <div class="path-content">
+                                <h4>Foundation (0-3 months)</h4>
+                                <p>Programming, OOP, OOD</p>
+                            </div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-marker">2</div>
+                            <div class="path-content">
+                                <h4>Core Skills (3-7 months)</h4>
+                                <p>DS&A, Design Patterns, SWE, DB</p>
+                            </div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-marker">3</div>
+                            <div class="path-content">
+                                <h4>System Core (8-10 months)</h4>
+                                <p>OS, Networking, Architecture</p>
+                            </div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-marker">4</div>
+                            <div class="path-content">
+                                <h4>Security & Specialization (11-14 months)</h4>
+                                <p>Security, Career Path</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="overview-cta">
+                    <button class="btn btn-large btn-primary" onclick="scrollToSection('beginners')">
+                        <i class="fas fa-play"></i> Start Learning Now
+                    </button>
+                    <button class="btn btn-large btn-secondary" onclick="scrollToSection('timeline')">
+                        <i class="fas fa-map"></i> View Complete Timeline
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- For Absolute Beginners Section -->
+        <section class="section" id="beginners">
+            <div class="section-header">
+                <div class="section-number">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="section-info">
+                    <h2 class="section-title">For Absolute Beginners</h2>
+                    <p class="section-subtitle">Starting from zero? Here's exactly what you need to know</p>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-map-signs"></i>
+                        </div>
+                        <h3>Where to Start</h3>
+                    </div>
+                    <div class="card-content">
+                        <ol>
+                            <li><strong>Choose C++ as your first language</strong> - Best for understanding fundamentals</li>
+                            <li><strong>Focus on concepts, not syntax</strong> - Programming is problem solving</li>
+                            <li><strong>Start with simple programs</strong> - Calculator, patterns, basic games</li>
+                            <li><strong>Practice daily</strong> - Even 1 hour makes a difference</li>
+                            <li><strong>Join a community</strong> - Learning with others is easier</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Tips for Success</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Be patient</strong> - Everyone struggles at first</li>
+                            <li><strong>Type code, don't copy</strong> - Muscle memory matters</li>
+                            <li><strong>Read error messages</strong> - They're trying to help</li>
+                            <li><strong>Build projects</strong> - Theory without practice is useless</li>
+                            <li><strong>Take breaks</strong> - Your brain needs time to process</li>
+                            <li><strong>Celebrate small wins</strong> - Every step counts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <h3>Common Mistakes to Avoid</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Jumping between languages</strong> - Master one first</li>
+                            <li><strong>Tutorial hell</strong> - Balance learning with doing</li>
+                            <li><strong>Comparing yourself</strong> - Everyone learns differently</li>
+                            <li><strong>Skipping fundamentals</strong> - No shortcuts to mastery</li>
+                            <li><strong>Not asking for help</strong> - Questions are good</li>
+                            <li><strong>Giving up too early</strong> - Persistence is key</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Timeline Section -->
+        <section class="section" id="timeline">
+            <div class="section-header">
+                <div class="section-number">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="section-info">
+                    <h2 class="section-title">Complete Learning Timeline</h2>
+                    <p class="section-subtitle">A realistic timeline with clear milestones</p>
+                </div>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-phase">
+                    <h3><i class="fas fa-flag-checkered"></i> Phase 1: Foundation (Months 0-3)</h3>
+                    <div class="timeline-content">
+                        <div class="timeline-item">
+                            <strong>Month 1:</strong> Programming Fundamentals with C++
+                            <ul>
+                                <li>Variables, data types, operators</li>
+                                <li>Control structures (if/else, loops)</li>
+                                <li>Functions and scope</li>
+                                <li>Daily practice: 2-3 hours</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Month 2:</strong> Object-Oriented Programming
+                            <ul>
+                                <li>Classes and objects</li>
+                                <li>Inheritance and polymorphism</li>
+                                <li>Encapsulation and abstraction</li>
+                                <li>Build 2-3 OOP projects</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Month 3:</strong> Object-Oriented Design
+                            <ul>
+                                <li>SOLID principles</li>
+                                <li>UML diagrams</li>
+                                <li>Design a complete system</li>
+                                <li>Code reviews and refactoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-phase">
+                    <h3><i class="fas fa-layer-group"></i> Phase 2: Core Skills (Months 3-7)</h3>
+                    <div class="timeline-content">
+                        <div class="timeline-item">
+                            <strong>Months 3-6:</strong> Data Structures & Algorithms
+                            <ul>
+                                <li>Arrays, Linked Lists, Stacks, Queues</li>
+                                <li>Trees, Graphs, Hash Tables</li>
+                                <li>Sorting, Searching, Dynamic Programming</li>
+                                <li>Solve 150+ problems</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Month 5:</strong> Design Patterns
+                            <ul>
+                                <li>Creational, Structural, Behavioral patterns</li>
+                                <li>Gang of Four patterns</li>
+                                <li>Apply patterns to real projects</li>
+                                <li>Refactor existing code</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Month 6:</strong> Software Engineering
+                            <ul>
+                                <li>Clean code principles</li>
+                                <li>Git workflows and collaboration</li>
+                                <li>Testing and documentation</li>
+                                <li>Agile methodologies</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Month 7:</strong> Databases
+                            <ul>
+                                <li>SQL fundamentals and advanced queries</li>
+                                <li>Database design and normalization</li>
+                                <li>NoSQL basics (MongoDB)</li>
+                                <li>Build database-driven project</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-phase">
+                    <h3><i class="fas fa-cogs"></i> Phase 3: System Fundamentals (Months 8-10)</h3>
+                    <div class="timeline-content">
+                        <div class="timeline-item">
+                            <strong>Month 8:</strong> Computer Architecture
+                            <ul>
+                                <li>CPU and memory hierarchy</li>
+                                <li>Performance optimization</li>
+                                <li>Cache-friendly programming</li>
+                                <li>Modern architectures</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Month 9:</strong> Operating Systems
+                            <ul>
+                                <li>Process and thread management</li>
+                                <li>Memory management</li>
+                                <li>File systems</li>
+                                <li>Linux basics</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Month 10:</strong> Computer Networking
+                            <ul>
+                                <li>OSI model and TCP/IP</li>
+                                <li>HTTP/HTTPS protocols</li>
+                                <li>Network security basics</li>
+                                <li>Build networked application</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-phase">
+                    <h3><i class="fas fa-rocket"></i> Phase 4: Advanced Topics (Months 11-14)</h3>
+                    <div class="timeline-content">
+                        <div class="timeline-item">
+                            <strong>Month 11:</strong> Security Fundamentals
+                            <ul>
+                                <li>Cryptography (Hashing, Encryption)</li>
+                                <li>OWASP Top 10 vulnerabilities</li>
+                                <li>Authentication & Authorization</li>
+                                <li>Secure coding practices</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Months 12-14:</strong> Specialization & Projects
+                            <ul>
+                                <li>Choose your career path</li>
+                                <li>Build portfolio projects</li>
+                                <li>Interview preparation</li>
+                                <li>Start applying for jobs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p><strong>Note:</strong> Some topics can be studied in parallel after Phase 1. For example: Design Patterns alongside DS&A, Security alongside projects. Adjust based on your pace and career goals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content sections will be loaded here dynamically -->
+        <div id="dynamicContent"></div>
+
+        <!-- Career Paths Section -->
+        <section class="section" id="careers">
+            <div class="section-header">
+                <div class="section-number">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="section-info">
+                    <h2 class="section-title">Career Paths & Specializations</h2>
+                    <p class="section-subtitle">Choose your path after mastering the fundamentals</p>
+                </div>
+            </div>
+
+            <!-- Roadmap.sh Reference -->
+            <div class="roadmap-reference">
+                <i class="fas fa-map"></i>
+                <p>For detailed specialization roadmaps, visit <a href="https://roadmap.sh" target="_blank">roadmap.sh <i class="fas fa-external-link-alt"></i></a></p>
+            </div>
+
+            <!-- Career Filter -->
+            <div class="career-filter">
+                <button class="filter-btn active" onclick="filterCareers('all')">All Paths</button>
+                <button class="filter-btn" onclick="filterCareers('frontend')">Frontend</button>
+                <button class="filter-btn" onclick="filterCareers('backend')">Backend</button>
+                <button class="filter-btn" onclick="filterCareers('data')">Data</button>
+                <button class="filter-btn" onclick="filterCareers('mobile')">Mobile</button>
+                <button class="filter-btn" onclick="filterCareers('emerging')">Emerging Tech</button>
+            </div>
+
+            <div class="careers-grid" id="careersGrid">
+                <!-- Career cards will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="section" id="resources">
+            <div class="section-header">
+                <div class="section-number">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="section-info">
+                    <h2 class="section-title">Curated Resources & Learning Materials</h2>
+                    <p class="section-subtitle">Hand-picked resources for each topic</p>
+                </div>
+            </div>
+
+            <div class="resources-tabs">
+                <button class="tab-btn active" onclick="showResourceTab('books')">
+                    <i class="fas fa-book"></i> Books
+                </button>
+                <button class="tab-btn" onclick="showResourceTab('courses')">
+                    <i class="fas fa-video"></i> Courses
+                </button>
+                <button class="tab-btn" onclick="showResourceTab('practice')">
+                    <i class="fas fa-code"></i> Practice
+                </button>
+                <button class="tab-btn" onclick="showResourceTab('communities')">
+                    <i class="fas fa-users"></i> Communities
+                </button>
+            </div>
+
+            <div class="resources-content" id="resourcesContent">
+                <!-- Resources will be loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CS Roadmap 2025</h3>
+                <p>Your comprehensive guide to mastering computer science fundamentals.</p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#timeline">Learning Timeline</a></li>
+                    <li><a href="#programming">Start Learning</a></li>
+                    <li><a href="#careers">Career Paths</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Download PDF</a></li>
+                    <li><a href="#">GitHub Repo</a></li>
+                    <li><a href="#">Contribute</a></li>
+                    <li><a href="https://roadmap.sh" target="_blank">roadmap.sh</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CS Roadmap. Open Source Project. Made with ❤️ by Mohamed Ali.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- External JavaScript -->
+    <script src="./js/script.js"></script>
+    <script src="./js/data.js"></script>
+</body>
+</html>
